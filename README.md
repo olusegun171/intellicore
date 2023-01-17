@@ -12,8 +12,8 @@ Before starting, you need to have [Laravel 8 +](https://laravel.com) installed.
 
 ## Installation ##
 
+1. Add the following section to your Laravel project composer.json file
 ```bash
-# To install, you will have to include the following in your laravel project composer.json file.
 "repositories": [
     {
         "type": "vcs",
@@ -21,11 +21,15 @@ Before starting, you need to have [Laravel 8 +](https://laravel.com) installed.
     }
 ]
 ```
+2. Run Composer to install the packgage from the repo
 ```bash
 # then run composer.
 $ composer require intellicore/pin-generator
 ```
-
+3. Add the following to the list of sevice provider in config/app.php
+```bash
+Intellicore\PinGenerator\GeneratorServiceProvider::class
+```
 ## Usage ##
 
 - Generate PINs
