@@ -21,12 +21,12 @@ Before starting, you need to have [Laravel 8 +](https://laravel.com) installed.
     }
 ]
 ```
-2. Run Composer to install the packgage from the repo
+2. Run composer to install the package from the repo
 ```bash
-# then run composer.
+
 $ composer require intellicore/pin-generator
 ```
-3. Add the following to the list of sevice provider in config/app.php
+3. Add the following to the list of service provider in config/app.php
 ```bash
 Intellicore\PinGenerator\GeneratorServiceProvider::class
 ```
