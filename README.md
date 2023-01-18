@@ -31,23 +31,15 @@ $ composer require intellicore/pin-generator
 ```bash
 Intellicore\PinGenerator\GeneratorServiceProvider::class
 ```
-4. Add the following Alias to the list of Aliases in config/app.php 
-<small>Note: This would have be done automatically after running composer if package was already published)</small>
-```bash
-'aliases' => [
-    ...
-    'Generator'=> Intellicore\PinGenerator\Facades\GeneratorFacade::class,
-    ...
-]
-```
+
 ## Usage ##
 
 - Generate PINs
 ```php
-use Generator;
+use Intellicore\PinGenerator\Facades\IntellicoreGenerate;
 
 $n = 5; #number of PINs
-$pins = Generator::emit($n)
+$pins = IntellicoreGenerate::emit($n)
 #this will return an array of 'n' number of pins
 ```
 
