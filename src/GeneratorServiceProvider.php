@@ -4,6 +4,7 @@ namespace Intellicore\PinGenerator;
 
 use Illuminate\Support\ServiceProvider;
 use Intellicore\PinGenerator\Console\IntellicoreCommand;
+use Intellicore\PinGenerator\Classes\Generator;
 
 class GeneratorServiceProvider extends ServiceProvider
 {
@@ -18,5 +19,9 @@ class GeneratorServiceProvider extends ServiceProvider
                 IntellicoreCommand::class,
             ]);
         }
+
+        $this->app->bind('intellicore-generator', function ($app) {
+            return new Generator();
+        });
     }
 }

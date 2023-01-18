@@ -3,7 +3,7 @@
 namespace Intellicore\PinGenerator\Console;
 
 use Illuminate\Console\Command;
-use Intellicore\PinGenerator\Classes\Generator;
+use Intellicore\PinGenerator\Facades\IntellicoreGenerate;
 
 class IntellicoreCommand extends Command
 {
@@ -31,8 +31,7 @@ class IntellicoreCommand extends Command
         $total = $this->ask('Enter the total number of pins to generate. (default is 5)');
         $total = $total ?? 5;
 
-        $generate= new Generator();
-        $pins = $generate->emit($total);
+        $pins = IntellicoreGenerate::emit($total);
 
         foreach ($pins as $pin) {
             $this->line($pin);

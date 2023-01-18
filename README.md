@@ -27,18 +27,27 @@ Before starting, you need to have [Laravel 8 +](https://laravel.com) installed.
 $ composer require intellicore/pin-generator
 ```
 3. Add the following to the list of service provider in config/app.php
+<small>Note: This would have be done automatically after running composer if package was already published)</small>
 ```bash
 Intellicore\PinGenerator\GeneratorServiceProvider::class
+```
+4. Add the following Alias to the list of Aliases in config/app.php 
+<small>Note: This would have be done automatically after running composer if package was already published)</small>
+```bash
+'aliases' => [
+    ...
+    'Generator'=> Intellicore\PinGenerator\Facades\GeneratorFacade::class,
+    ...
+]
 ```
 ## Usage ##
 
 - Generate PINs
 ```php
-use Intellicore\PinGenerator\Classes\Generator;
+use Generator;
 
-$generate = new Generator();
 $n = 5; #number of PINs
-$pins = $generate->emit($n)
+$pins = Generator::emit($n)
 #this will return an array of 'n' number of pins
 ```
 

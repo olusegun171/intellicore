@@ -19,10 +19,17 @@
         "laravel": {
             "providers": [
                 "Intellicore\\PinGenerator\\GeneratorServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Generator": "Intellicore\\PinGenerator\\Facades\\GeneratorFacade"
+            }
         }
     },
     "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2|^8.0|^8.1",
+        "illuminate/support": "~8|~9"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9"
     }
