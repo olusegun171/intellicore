@@ -21,7 +21,7 @@
                 "Intellicore\\PinGenerator\\GeneratorServiceProvider"
             ],
             "aliases": {
-                "Generator": "Intellicore\\PinGenerator\\Facades\\GeneratorFacade"
+                "IntellicoreGenerate": "Intellicore\\PinGenerator\\Facades\\IntellicoreGenerate"
             }
         }
     },
