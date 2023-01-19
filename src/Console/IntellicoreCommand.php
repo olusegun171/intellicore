@@ -12,7 +12,7 @@ class IntellicoreCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'intellicore:generate';
+    protected $signature = 'intellicore:generate {--digit=4}';
 
     /**
      * The console command description.
@@ -28,10 +28,10 @@ class IntellicoreCommand extends Command
      */
     public function handle()
     {
-        $total = $this->ask('Enter the total number of pins to generate. (default is 5)');
-        $total = $total ?? 5;
+        $digit = $this->option('digit') ?? $this->ask('Enter the number of digit');
+        $total = $this->ask('Enter the total number of pins to generate. (or press enter)');
 
-        $pins = IntellicoreGenerate::emit($total);
+        $pins = IntellicoreGenerate::emit($total, $digit);
 
         foreach ($pins as $pin) {
             $this->line($pin);

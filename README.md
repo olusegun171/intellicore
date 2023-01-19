@@ -38,15 +38,19 @@ Intellicore\PinGenerator\GeneratorServiceProvider::class
 ```php
 use Intellicore\PinGenerator\Facades\IntellicoreGenerate;
 
-$n = 5; #number of PINs
-$pins = IntellicoreGenerate::emit($n)
-#this will return an array of 'n' number of pins
+$number = 5; #number of PINs
+$pins = IntellicoreGenerate::emit($number, $digit)
+#this will return an array of number of pins
 ```
 
 - Using php artisan
 ```php
 php artisan intellicore:generate
+##Generate a 4 digit PIN (default)
 ```
 
-
+```php
+php artisan intellicore:generate --digit=7
+##Generate PINs of 7 digit
+```
 <a href="#top">Back to top</a>

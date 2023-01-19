@@ -56,15 +56,15 @@ class Generator
      *
      * @return array
      */
-    public function emit(int $totalNumberOfPin = 1, int $pinLength = null): array
+    public function emit(int $totalNumberOfPin = 1, int $digits = 4): array
     {
         $generatedPins = array();
 
         $shouldGenerate = true;
 
         while ($shouldGenerate) {
-            $random = random_int(1000, 9999);
-
+            $random = random_int(pow(10, $digits-1), pow(10, $digits)-1);
+            
             $isInvalid = $this->pinValidity($random);
 
             if ($isInvalid) {
